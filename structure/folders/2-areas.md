@@ -34,6 +34,6 @@ next_contact:   # date — drives the "due for a check-in" view
 visibility: private
 ```
 
-The `next_contact` date is the forcing function: a view filtered to `now() > next_contact` surfaces exactly who you've let slip — the same trick as the decision system's `review_by`. That date field is what separates a living database from a stale address book.
+The `next_contact` date is the forcing function: a view filtered to `now() > next_contact` surfaces exactly who you've let slip — the same trick as the decision system's `review_by`. That date field is what separates a living database from a stale address book. The dashboard lifts it further: a **"people overdue for a check-in"** health row means the nudge finds you on startup instead of only when you open the base.
 
 **Lifecycle question this folder answers:** *Is this an ongoing part of who I am or what I maintain?*

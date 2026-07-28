@@ -207,6 +207,7 @@ One dashboard note at root, opened on startup, holding a health table that check
 | Decisions past their review date | 0 |
 | Goals file freshness | updated within 90 days |
 | Current season | open and unexpired |
+| People overdue for a check-in | 0 (a `next_contact` date past today) |
 
 Below it: the loop table with when to run each, and live queries for the root drain and the inbox. On triage day the dashboard prints its own reminder.
 
