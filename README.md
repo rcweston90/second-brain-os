@@ -8,6 +8,10 @@ This repo is a replication guide, not a template. It documents a system that's b
 
 **→ The full architecture lives in [GUIDE.md](GUIDE.md).** This page is just what you need and what to do.
 
+**Browse the system directly:**
+- **[structure/](structure/)** — the annotated skeleton: a [system map](structure/system-map.md) (mermaid diagrams of the loops and decision gates), the [vault map](structure/vault-map.md), and the per-folder `_about.md` files an agent reads to know where things belong.
+- **[DECISION-OS.md](DECISION-OS.md)** — the optional life-decision extension in full: weighted values, tiered decision records, adversarial review, and the calibration loop.
+
 ---
 
 ## What you need

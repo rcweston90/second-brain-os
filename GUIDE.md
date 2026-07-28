@@ -24,7 +24,7 @@ Seven numbered lifecycle folders plus underscore-prefixed system folders. The nu
 |---|---|---|
 | `0-inbox` | Unprocessed capture | *Have I processed this?* |
 | `1-projects` | Time-bound work with a defined outcome | *Am I working toward an outcome?* |
-| `2-areas` | Ongoing responsibility & identity — no finish line | *Is this an ongoing part of me?* |
+| `2-areas` | Ongoing responsibility & identity — no finish line; home of the wiki (`topics/`) | *Is this an ongoing part of me?* |
 | `3-library` | Reference someone else produced | *Is this input I consult?* |
 | `4-studio` | Original output — writing, sketches, apps | *Am I creating this?* |
 | `5-journal` | Daily notes, append-only | *When did this happen?* |
@@ -58,6 +58,8 @@ Seven numbered lifecycle folders plus underscore-prefixed system folders. The nu
 **Tags carry cross-cutting concerns**, folders carry lifecycle position. Three namespaces: `#status/`, `#type/`, `#topic/`.
 
 **Projects** get one folder in `1-projects/` with an `_index.md` landing page containing: outcome (one sentence describing done), deadline, status, working notes, and a **dated decisions log**. Projects idle 90 days are archived.
+
+**The wiki** lives *inside* the vault, under `2-areas` (`topics/`) — not a separate vault or a new top-level folder. A topic page is a hub in your own words: current position, links out to the projects, library notes, and essays that are the evidence, and the open questions. A subject earns a page when it recurs across two or more projects or essays; before that, the material stays where it is. Projects link into topics, topics link out to evidence — when a project archives, its topic page is the residue that survives. Keeping the wiki in the same vault is what lets the maintenance loops tend it like everything else, and what makes project ↔ wiki linkages one wikilink instead of a cross-system reference. (Browse the anonymized structure under [`structure/`](structure/).)
 
 **Privacy markers** are structural, not conventional: `visibility: private` frontmatter means the content is never quoted into any other note, summary, or anything in the publishing pipeline.
 
@@ -246,6 +248,8 @@ Four layers by stability:
 - **Reviews** — every record gets a scheduled review asking *did the weights predict what actually mattered?* Weight edits flow back into the values file, dated and logged. Without this the matrix is a form; with it, the weights converge on the person you actually are.
 
 Two loops run it (decide, life-review), each with the standard anatomy — state file, hard rules, kill criterion — and three health rows on the dashboard. Everything lives inside the existing areas folder; no new taxonomy.
+
+**Full build:** the complete setup guide — artifacts in steady state, the ten-part T3 record, the values interview, kill criteria — is in [DECISION-OS.md](DECISION-OS.md).
 
 ---
 
