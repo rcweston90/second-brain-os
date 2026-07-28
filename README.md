@@ -1,6 +1,50 @@
 # The Second Brain OS — a replication guide
 
-How my Obsidian vault is structured and how it runs, written so someone else can rebuild it from scratch. High-level only: the skeleton, the conventions, and the automated loops. Names of specific notes and tools have been generalized — the structure is the point.
+A complete architecture for an **agent-operated Obsidian vault**: seven lifecycle folders, a governance file the agent obeys, automated maintenance loops with built-in kill criteria, a publishing pipeline, and a personal decision system — all runnable by Claude Code working directly on your markdown files.
+
+This is a replication guide, not a template repo. It documents a system that's been through three generations (two failed; the failures are documented in §1) so you can rebuild it in your own vault in about two sittings. Names of specific notes have been generalized — the structure is the point.
+
+**Who it's for:** anyone whose beautifully organized notes system keeps dying of neglect, and who is willing to let an AI agent do the janitorial work while keeping every judgment call for themselves.
+
+---
+
+## 0. What you need before starting
+
+The stack is deliberately thin, but these are hard prerequisites — the loops and dashboard do not work without them.
+
+### Required
+
+| Tool | What for | Setup notes |
+|---|---|---|
+| **[Obsidian](https://obsidian.md)** (desktop) | The store and the viewport — a local folder of plain markdown | Free. Create a fresh vault; don't retrofit a live one until you've read §9 |
+| **[Claude Code](https://claude.com/claude-code)** | The runtime — the agent that runs every loop | CLI install; needs a Claude subscription or API key. Verify with `claude` in a terminal before anything else |
+| **git** | Versioning + rollback points before structural changes | `git init` inside the vault; add `.obsidian/workspace*` to `.gitignore` |
+| **Bases** (Obsidian core plugin) | Database views over frontmatter — the writing pipeline and decision views | Built into Obsidian; enable under Settings → Core plugins |
+| **Daily notes** (core plugin) | Journal capture landing in the right folder | Point it at your journal folder, format `YYYY-MM-DD` |
+
+### Community plugins (install in Obsidian → Settings → Community plugins)
+
+| Plugin | Role | Notes |
+|---|---|---|
+| **Dataview** | Powers the self-checking dashboard health table | After installing, enable **JavaScript Queries** in its settings — without this the dashboard renders as a dead code block |
+| **claude-sidebar** | Runs Claude Code in an Obsidian sidebar pane — the keystone integration (§4) | Not in the community store; install via **BRAT** (below). Desktop only |
+| **BRAT** | Installs plugins not in the official store | Needed to get claude-sidebar |
+| **Homepage** | Opens your dashboard note on startup | Point it at the dashboard once built (§8) |
+| **obsidian-git** | Commit/backup from inside Obsidian | Optional if you're comfortable committing from the terminal |
+| **open-in-terminal** | One keystroke from vault to a full terminal Claude Code session | Optional but recommended for long sessions |
+| **obsidian-linter** | Keeps frontmatter well-formed | Matters because frontmatter is state (§3) |
+
+### Optional
+
+- **A meeting recorder with folders** (any tool with an API/MCP connector) — only if you want the capture-sync loop (§6). The rule: instrument the capture habit you already have; don't adopt a tool to justify a loop.
+- **GitHub CLI (`gh`)** — only for the publishing and activity-log loops.
+
+### Setup at a glance
+
+1. Install the tools above; verify Claude Code runs against an empty test folder.
+2. **Sitting one (2–3 hours):** folder skeleton + governance file + dashboard — §9, steps 1–5. Most of it is delegable to the agent itself.
+3. **Sitting two:** write the loops — §9, steps 6–8.
+4. **Weeks one and two:** run every loop manually. Automate nothing until a loop survives two clean weeks.
 
 ---
 
